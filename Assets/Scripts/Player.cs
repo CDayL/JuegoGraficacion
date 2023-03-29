@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] Transform bulletPrefab;// Referencia a la bala o prefab
     bool gunLoaded = true; //Saber si esta cargada con una bala
     [SerializeField] float fireRate = 1; // Variable para controlar numero de balas
+    [SerializeField] int health = 10; // Afectar la salud del jugador
 
     // Start is called before the first frame update
     void Start()
@@ -67,5 +68,12 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1/fireRate);
         // Recargar el arma con una bala
         gunLoaded = true;
+    }
+
+    // METODO PARA REDUCIR VIDA AL JUGADOR
+    public void TakeDamage()
+    {
+        // Reducir la vida del jugador
+        health--;
     }
 }
