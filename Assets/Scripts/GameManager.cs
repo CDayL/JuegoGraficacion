@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance; //Tener acceso desde otros scrips, no es recomedable crear variables staticas todo el tiempo; arranca cuando inicia el juego y se detiene hasta que termina
     [SerializeField] int time = 30; // Contador de tiempo del juego
+    public int difficulty = 1; // Controlar dificultad del juego
 
     /// // Start is called before the first frame update
     void Start()
