@@ -31,10 +31,12 @@ public class EnemySpawnController : MonoBehaviour
 
             if (random < GameManager.Instance.difficulty * 0.1f)
             {
+                // Crea el enemigo mas fuerte
                 Instantiate(enemyPrefab[0]);
             }
             else
             {
+                // Crea el enemigo mas debil
                 Instantiate(enemyPrefab[1]);
             }
         }

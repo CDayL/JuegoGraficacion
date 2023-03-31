@@ -12,8 +12,14 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Buscar player y obtener su transform
+        // Referencia de player
         player = FindObjectOfType<Player>().transform;
+
+        // Referencia de los SpawnPoints
+        GameObject[] spawnPoint = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        // Enemigo escoja aleatoriamente un spawnpoint desde cero hasta la cantidad de spawnpoints que aiga
+        int randomSpawnPoint = Random.Range(0, spawnPoint.Length);
+        transform.position = spawnPoint[randomSpawnPoint].transform.position;
     }
 
     // Update is called once per frame
