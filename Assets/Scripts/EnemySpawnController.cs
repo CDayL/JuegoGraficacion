@@ -20,6 +20,7 @@ public class EnemySpawnController : MonoBehaviour
         
     }
 
+    // SPAWN DE LOS ENEMIGOS
     IEnumerator SpawnNewEnemy ()
     {
         while (true)

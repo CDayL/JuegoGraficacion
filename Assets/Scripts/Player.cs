@@ -38,13 +38,10 @@ public class Player : MonoBehaviour
         transform.position += moveDirection * Time.deltaTime * speed; //Sumar moveDirection a la posicion del jugador, normalizar el vector con respecto al movimiento con Time.deltaTime y multiplicar por la velocidad deceada osea speed
 
         // MOVIMIENTO DE LA MIRA
-
         facingDirection = camera.ScreenToWorldPoint(Input.mousePosition) - transform.position; // Asignar posicion con respecto a la camara, traducir la posicion del puntero al espacio del mundo; resta la posicion del jugador. Obtenemos una direccion que guarda facingDirection
-
         aim.position = transform.position + (Vector3)facingDirection.normalized; //Asignar direccion obtenida a aim.position; debes sumar la posicion del jugador, agragar un espacio fijo alrededor del jugador
 
         //CREACION DE BALA
-
         if (Input.GetMouseButton(0) && gunLoaded)
         {
             // No podre disparar ya que no esta cargada el arma
@@ -60,8 +57,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // CORRUTINA (Creamos tiempo para recargar la bala)
-
+    // CORRUTINA: TIEMPO DE RECARGA DE BALA
     IEnumerator ReloadGun ()
     {
         // Crear tiempo de retraso

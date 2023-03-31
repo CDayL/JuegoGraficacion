@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour
     }
 
     //CUANDO SE ACERCA EL ENEMIGO AL JUGADOR
-
     private void OnTriggerEnter2D(Collider2D collision) //collision guarda el objeto con el que choca el enemigo
     {
         if(collision.CompareTag("Player"))
